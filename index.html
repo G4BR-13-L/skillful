@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>Adivinhe o número</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="container">
+		<div class="wrapContainer">
+			<div class="box">
+				<div id="center">
+					<h1>Username</h1>
+					<input type="text" id="username">
+					<h1>Site</h1>
+					<input type="text" id="site-url">
+					<h1>Aplication Name</h1>
+					<input type="text" id="application-name">
+				</div>
+				<div id="buttons">
+					<button onclick="clearList();" >Clear</button>
+					<button onclick="generate()">Generate</button>
+				</div>
+			</div>
+			
+			<div class="box" id="resumer">
+				<select name="" size="8"id="resume">
+				</select>
+				<button onclick="removeItemFromResume()">Remove</button>
+			</div>
+			<div class="box">
+			</div>
+		</div>
+		
+
+
+		<div class="box">
+			<ul id="list">
+				
+			</ul>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

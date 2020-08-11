@@ -1,0 +1,113 @@
+@font-face{
+	font-family: 'Circular Bold';
+	src:url('../fonts/Circular Std Bold.ttf');
+}
+@font-face{
+	font-family: 'Circular Book';
+	src:url('../fonts/Circular Std Book.ttf');
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,900;1,900&display=swap');
+	body{
+		font-family: 'Circular Bold','Montserrat', Arial;
+		background-image: url('../img/bg.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		/*background: rgb(33,35,195);
+		background: linear-gradient(90deg, rgba(33,35,195,1) 0%, rgba(36,88,194,1) 48%, rgba(57,255,208,1) 100%);*/
+	}
+	#container{
+		width:80%;
+		align-self: center;
+		margin: 20px auto;
+		justify-content: center;
+		display: flex;
+		flex-flow: column;
+	}
+	#container .box{
+		background-color:white;
+		border-radius:30px;
+		margin:20px 0;
+		padding:30px;
+		box-shadow: 5px 5px 0 #191414;
+		
+	}
+	.wrapContainer{
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 3fr 2fr 1fr;
+		grid-column-gap: 20px;
+	}
+	
+	.box{
+		display: flex;
+		
+		flex-flow: column;
+		align-items: center;
+		align-content: center;
+		padding: 30px;
+	}
+	.box input{
+		width:500px;
+		height:50px;
+		line-height: 50px;
+		border-radius: 10px;
+		text-indent: 10px;
+		font-size:28px;
+		border: 0.0009em solid black;
+		font-family: 'Circular Std Book', 'Montserrat';
+	}
+	.box button{
+		margin-top:20px;
+		min-width: 180px;
+		border-radius: 10px;
+		background-color: #191414;
+		font-weight: bolder;
+		color:white;
+		height:60px;
+		font-size:23px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		padding:20px;
+		line-height: 58px;
+		border:0;
+
+	}
+	#list{
+		width:90%;
+		border-left: 5px solid #191414;
+		border-top: none;
+		border-bottom:none;
+		border-right:none;
+		outline: none;
+		list-style: none;
+		border-radius: 9px;
+        
+	}
+	#list li{
+		font-family: 
+	}
+	#buttons{
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+
+	#resumer select{
+		list-style: none;
+		width:100%;
+		border:none;
+		min-height: 400px;
+	}
+	#resumer select option{
+		width: 80%;
+		background-color: #f15457;
+		color:white;
+		margin:5px 10px 5px 0;
+		padding:10px;
+		font-size: 30px;
+		border-radius: 10px;
+		border: none;
+	}
