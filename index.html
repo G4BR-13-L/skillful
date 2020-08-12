@@ -4,30 +4,62 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body onload="motivate()">
+
 	<div id="container">
 		<div class="wrapContainer">
-			<div class="box">
-				<div id="center">
-					<h1>Username</h1>
-					<input type="text" id="username">
-					<h1>Site</h1>
-					<input type="text" id="site-url">
-					<h1>Aplication Name</h1>
-					<input type="text" id="application-name">
+
+			<div class="box operation">
+				<div class="side-bar">
+
+					<span  class="negative-radius-1"><div id="top-radius" class="white-ground white-ground-1"></div></span>
+					<span class="tabs tab-1" onclick="tab1()">
+						<label  class="">Nativefier Script</label>
+					</span>
+					<span class="negative-radius-2"><div class="white-ground white-ground-2"></div></span>
+					<span class="tabs tab-2" onclick="tab2()">
+						<label  class="">Tab 2</label>
+					</span>
+					<span class="negative-radius-3"><div class="white-ground white-ground-3"></div></span>
+					<span class="tabs tab-3" onclick="tab3()">
+						<label  class="">Tab 3</label>
+					</span>
+					<span class="negative-radius-4"><div class="white-ground white-ground-4"></div></span>
 				</div>
-				<div id="buttons">
-					<button onclick="clearList();" >Clear</button>
-					<button onclick="generate()">Generate</button>
+				<div class="content">
+					<div id="center">
+						
+						<h1>Username</h1>
+						<input class="data-field" type="text" id="username">
+						<h1>Site</h1>
+						<input class="data-field" type="text" id="site-url">
+						<h1>Application Name</h1>
+						<input class="data-field" type="text" id="application-name">
+						
+						<div id="buttons">
+							<button onclick="clearList();" >Clear</button>
+							<button onclick="generate()">Generate</button>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 			
 			<div class="box" id="resumer">
-				<select name="" size="8"id="resume">
+				<h1>Resume</h1>
+				<select name="" size="6"id="resume">
 				</select>
 				<button onclick="removeItemFromResume()">Remove</button>
 			</div>
-			<div class="box">
+			<div class="box motivacional-quotes">
+				<h1>Motivacional</h1>
+				<nav class="motivacional-quotes-list">
+					<ul class="ul-quote-list">
+						
+					</ul>
+				</nav>
+				<button onclick="motivate()">Motivate</button>
+				
 			</div>
 		</div>
 		
@@ -40,6 +72,11 @@
 		</div>
 
 	</div>
-	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/scriptGenerator.js"></script>
+	<script type="text/javascript" src="js/navigation.js"></script>
+	<script type="text/javascript" src="js/motivacionalQuote.js"></script>
+
+	
+	
 </body>
 </html>
