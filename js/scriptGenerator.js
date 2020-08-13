@@ -22,7 +22,7 @@ function generate(){
 	item.setAttribute("class", newApplicationName)
 
 	item.innerText = `
-	nativefier --name ${newApplicationName} ${site} && cd ${newApplicationName}-linux-x64 && mv /home/${username}/${newApplicationName}-linux-x64 /home/${username}/${applicationName} && cd .. && sudo mv ${applicationName} /opt && sudo ln -sf /opt/${applicationName}/${newApplicationName} /usr/bin/${applicationName} && echo -e '[Desktop Entry] Version=1.0 Name=${applicationName} Exec=/opt/${applicationName}/${newApplicationName} Icon=/opt/${applicationName}/resources/app/static/Icon.png Type=Application Categories=Application' | sudo tee /usr/share/applications/${applicationName}.desktop &&`;
+	cd ~ && nativefier --name ${newApplicationName} ${site} && cd ${newApplicationName}-linux-x64 && mv /home/${username}/${newApplicationName}-linux-x64 /home/${username}/${applicationName} && cd .. && sudo mv ${applicationName} /opt && sudo ln -sf /opt/${applicationName}/${newApplicationName} /usr/bin/${applicationName} && echo -e '[Desktop Entry] Version=1.0 Name=${applicationName} Exec=/opt/${applicationName}/${newApplicationName} Icon=/opt/${applicationName}/resources/app/static/Icon.png Type=Application Categories=Application' | sudo tee /usr/share/applications/${applicationName}.desktop &&`;
 	list.appendChild(item);
 	
 }
