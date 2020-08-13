@@ -234,3 +234,14 @@ body{
 		margin:20px 0;
 
 	}
+	#second-page{
+		padding: 0px;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		width: 100%;
+	}
+	#second-page h1{
+		margin: 20px auto;
+
+	}

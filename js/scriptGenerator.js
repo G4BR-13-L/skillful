@@ -19,15 +19,37 @@ function generate(){
 	resume.appendChild(itemResumed)
 	//window.alert(newApplicationName)
 	var item = document.createElement('li');
-	item.setAttribute("id", newApplicationName)
+	item.setAttribute("class", newApplicationName)
 
 	item.innerText = `
 	nativefier --name ${newApplicationName} ${site} && cd ${newApplicationName}-linux-x64 && mv /home/${username}/${newApplicationName}-linux-x64 /home/${username}/${applicationName} && cd .. && sudo mv ${applicationName} /opt && sudo ln -sf /opt/${applicationName}/${newApplicationName} /usr/bin/${applicationName} && echo -e '[Desktop Entry] Version=1.0 Name=${applicationName} Exec=/opt/${applicationName}/${newApplicationName} Icon=/opt/${applicationName}/resources/app/static/Icon.png Type=Application Categories=Application' | sudo tee /usr/share/applications/${applicationName}.desktop &&`;
 	list.appendChild(item);
-
-
-
 	
+}
+function generateRmScript(){
+	var list = document.querySelector('ul#list');
+	var hatedApplicationName = document.querySelector('input#hated-application-name').value;
+	var hatedId;
+	var item = document.createElement('li');
+	var resume = document.querySelector('select#resume');
+	var itemResumed = document.createElement('option');
+	hatedApplicationName = hatedApplicationName.trim();
+	if(hatedApplicationName==''){
+		console.log("Empty input")
+	}else{
+		hatedApplicationName.toLowerCase();
+		hatedId = `hated${hatedApplicationName}`;
+		console.log(hatedId)
+		apps.push(hatedId);
+		item.setAttribute("class", hatedId);
+		itemResumed.setAttribute("id", hatedId);
+		itemResumed.innerText = hatedApplicationName;
+		resume.appendChild(itemResumed)
+		item.innerText = `sudo rm -Rf /opt/${hatedApplicationName}* && sudo rm -Rf /usr/bin/${hatedApplicationName} && sudo rm -Rf /usr/share/applications/${hatedApplicationName}.desktop`;
+		list.appendChild(item);
+	}
+	
+
 }
 
 function removeItemFromResume(){
@@ -40,13 +62,13 @@ function removeItemFromResume(){
 		var itemId = apps[select.selectedIndex]
 		var listOfItems = document.querySelector('ul#list');
 
-	    var item = document.querySelector(`li#${itemId}`);
-	    listOfItems.removeChild(item);
-	    console.log(apps[select.selectedIndex])
-	    window.alert('Removed item: '+ select.selectedIndex +'->'+apps[select.selectedIndex]);
-	    console.log('Removed item: '+ select.selectedIndex +'->'+apps[select.selectedIndex]);
-	    apps.splice(apps[select.selectedIndex], 1);
-	    select.options[select.selectedIndex] = null;
+		var item = document.querySelector(`li.${itemId}`);
+		listOfItems.removeChild(item);
+		console.log(apps[select.selectedIndex])
+		window.alert('Removed item: '+ select.selectedIndex +'->'+apps[select.selectedIndex]);
+		console.log('Removed item: '+ select.selectedIndex +'->'+apps[select.selectedIndex]);
+		apps.splice(apps[select.selectedIndex], 1);
+		select.options[select.selectedIndex] = null;
 	}
 
 

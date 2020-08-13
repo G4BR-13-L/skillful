@@ -65,7 +65,16 @@ function tab2(){
 	whiteGroundThree.style = 'border-radius: 0 10px 0 0;';
 	whiteGroundFour.style = 'border-radius: 0 0 0 0;';
 
-	nativefierScriptGenerator.innerHTML = `<h1>Segunda Pagina</h1>`
+	nativefierScriptGenerator.innerHTML = `<div id="second-page">
+						
+						<h1>Application Name</h1>
+						<input class="data-field" type="text" id="hated-application-name">
+						
+						<div id="buttons">
+							<button onclick="clearList();" >Clear</button>
+							<button onclick="generateRmScript()">Generate rm Script</button>
+						</div>
+					</div>`
 	console.log('Tab 2 selected');
 }
 
