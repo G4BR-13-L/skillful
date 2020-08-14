@@ -35,7 +35,9 @@
 						<input class="data-field" type="text" id="site-url">
 						<h1>Application Name</h1>
 						<input class="data-field" type="text" id="application-name">
-						
+						<h1>Icon Image</h1>
+						<label for="iconBeforeBase64" id="iconBeforeBase64-label">Browse...</label>
+						<input type="file" id="iconBeforeBase64" />
 						<div id="buttons">
 							<button onclick="clearList();" >Clear</button>
 							<button onclick="generate()">Generate</button>
@@ -71,11 +73,13 @@
 				
 			</ul>
 		</div>
+		<button id="download-button" onclick="downloadScript();" >Download</button>
 
 	</div>
 	<script type="text/javascript" src="js/scriptGenerator.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
 	<script type="text/javascript" src="js/motivacionalQuote.js"></script>
+	<script type="text/javascript" src="js/FileSaver.js"></script>
 
 	
 	
