@@ -61,7 +61,7 @@ body{
 		font-family: 'Circular Std Book', 'Montserrat';
 		margin: 0 auto;
 	}
-	.box button{
+	.box button, #download-button{
 		margin-top:20px;
 		min-width: 180px;
 		border-radius: 10px;
@@ -81,7 +81,7 @@ body{
 		font-family: 'Circular Bold','Montserrat', Arial;
 
 	}
-	.box button:hover{
+	.box button:hover, #download-button:hover{
 		background-color: white;
 		border:1px solid #4270A6;
 		color:#4270A6;
@@ -133,6 +133,32 @@ body{
 		border: none;
 		margin: 5px auto;
 		align-self: center;
+	}
+	#iconBeforeBase64{
+		opacity: 0;
+		position: absolute;
+		z-index: -1;
+	}
+	#iconBeforeBase64-label{
+		 cursor: pointer;
+		 width:80%;
+		 text-align: center;
+		 background-color: #191414;
+		 color:white;
+		 height:50px;
+		 font-family: 'Circular Bold','Montserrat', Arial;
+		 border-radius: 8px;
+		 transition: 0.3s;
+		 line-height: 50px;
+		 margin: 5px auto 0;
+		 font-size: 27px;
+
+	}
+	#iconBeforeBase64-label:hover{
+		background-color: white;
+		border:1px solid #F85079;
+		color:#F85079;
+		box-shadow: 5px 5px 0px #F85079;
 	}
 
 	/*==========================*/
