@@ -39,9 +39,11 @@ function tab1(){
 					<input class="data-field" type="text" id="username">
 					<h1>Site</h1>
 					<input class="data-field" type="text" id="site-url">
-					<h1>Aplication Name</h1>
+					<h1>Application Name</h1>
 					<input class="data-field" type="text" id="application-name">
-					
+					<h1>Icon Image</h1>
+					<label for="iconBeforeBase64" id="iconBeforeBase64-label">Browse...</label>
+					<input type="file" id="iconBeforeBase64" />
 					<div id="buttons">
 						<button onclick="clearList();" >Clear</button>
 						<button onclick="generate()">Generate</button>

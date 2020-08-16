@@ -9,13 +9,18 @@ function encodeImageFileAsURL(element) {
 	var file = element.files[0];
 	var reader = new FileReader();
 	var base64icon;
-	reader.onloadend = function() {
-		var trueBase64 = reader.result.replace('data:image/png;base64,', '')
-		console.log('RESULT', trueBase64)
-		window.alert(trueBase64);
-		base64icon = trueBase64;
+	if(file == null){
+		base64icon == null
+	}else{
+		reader.onloadend = function() {
+			var trueBase64 = reader.result.replace('data:image/png;base64,', '')
+			console.log('RESULT', trueBase64)
+			window.alert(trueBase64);
+			base64icon = trueBase64;
+		}
+		reader.readAsDataURL(file);
 	}
-	reader.readAsDataURL(file);
+	
 	window.alert(base64icon);
 	return(base64icon);
 }
@@ -45,7 +50,7 @@ function generate(){
 	item.setAttribute("class", newApplicationName)
 
 	trueBase64Icon = encodeImageFileAsURL(falseBase64Icon);
-	content.push(`cd ~ && nativefier --name ${newApplicationName} ${site} && cd /home/${username}/${newApplicationName}-linux-x64 && cd resources/app && mkdir static && cd static && echo '${trueBase64Icon}' > image.txt && base64 --decode image.txt > Icon.png && cd ../../.. && mv /home/${username}/${newApplicationName}-linux-x64 /home/${username}/${applicationName} && cd .. && sudo mv ${applicationName} /opt && sudo ln -sf /opt/${applicationName}/${newApplicationName} /usr/bin/${applicationName} && echo -e '[Desktop Entry]\n Version=1.0\n Name=${applicationName}\n Exec=/opt/${applicationName}\n /${newApplicationName} Icon=/opt/${applicationName}/resources/app/static/Icon.png\n Type=Application\n Categories=Application' | sudo tee /usr/share/applications/${applicationName}.desktop ;`);
+	content.push(`cd ~ && nativefier --name ${newApplicationName} ${site} && cd /home/${username}/${newApplicationName}-linux-x64 && cd resources/app && mkdir static && cd static || echo '${trueBase64Icon}' > image.txt && base64 --decode image.txt > Icon.png || cd ../../.. && mv /home/${username}/${newApplicationName}-linux-x64 /home/${username}/${applicationName} && cd .. && sudo mv ${applicationName} /opt && sudo ln -sf /opt/${applicationName}/${newApplicationName} /usr/bin/${applicationName} && echo -e '[Desktop Entry]\n Version=1.0\n Name=${applicationName}\n Exec=/opt/${applicationName}\n /${newApplicationName} Icon=/opt/${applicationName}/resources/app/static/Icon.png\n Type=Application\n Categories=Application' | sudo tee /usr/share/applications/${applicationName}.desktop ;`);
 	console.log(content);
 	
 	contentRepresentation = `#! /bin/bash cd ~ && nativefier --name ${newApplicationName} ${site} && cd /home/${username}/${newApplicationName}-linux-x64 && cd resources/app && mkdir static && cd static && echo '/**Base64Icon**/' > image.txt && base64 --decode image.txt > Icon.png && cd ../../.. && mv /home/${username}/${newApplicationName}-linux-x64 /home/${username}/${applicationName} && cd .. && sudo mv ${applicationName} /opt && sudo ln -sf /opt/${applicationName}/${newApplicationName} /usr/bin/${applicationName} && echo -e '[Desktop Entry] Version=1.0 Name=${applicationName} Exec=/opt/${applicationName} /${newApplicationName} Icon=/opt/${applicationName}/resources/app/static/Icon.png Type=Application Categories=Application' | sudo tee /usr/share/applications/${applicationName}.desktop ;`
