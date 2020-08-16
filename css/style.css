@@ -267,8 +267,13 @@ body{
 	display: flex;
 	justify-content: center;
 	padding-bottom: 30px;
+
 }
 
+.motivacional-quotes-list{
+	width:100%;
+	margin:0;
+}
 .motivacional-quotes-list ul{
 	list-style: none;
 	overflow:hidden; 
