@@ -8,6 +8,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,900;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap');
 body{
 	font-family: 'Circular Bold','Montserrat', Arial;
 	background-image: url('../img/bg.jpg');
@@ -281,16 +282,26 @@ body{
 	height:290px; 
 	width:100%;
 	padding: 0;
+	font-family: 'Aref Ruqaa', serif;
+}
+
+.ul-quote-list p{
+	margin:2px 0;
+
 }
 
 .motivacional-quotes-list-item{
-	width: 80%;
+	width: 100%;
 	min-height: 50px;
 	list-style: none;
 	border-left:5px solid #CCC;
 	padding: 10px 0 10px 10px;
 	margin:20px 0;
+	text-align: left;
 
+}
+.author{
+	margin-top: 10px;
 }
 
 #second-page{
