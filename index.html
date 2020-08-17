@@ -3,77 +3,91 @@
 	<title>Skillful</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="fonts/icofont/icofont.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
 </head>
 <body onload="motivate()">
 
 	<div id="container">
-		<div class="wrapContainer">
+		<div class="box operation" id="operations-box">
+			<div class="side-bar">
+				<span class="tabs">
+					<label for=""><i class="icofont-navigation-menu"></i></label>
+				</span>
+				
+				<span class="tabs tab-1" onclick="tab1()">
 
-			<div class="box operation">
-				<div class="side-bar">
-
-					<span  class="negative-radius-1"><div id="top-radius" class="white-ground white-ground-1"></div></span>
-					<span class="tabs tab-1" onclick="tab1()">
-						<label  class="">Nativefier Script</label>
-					</span>
-					<span class="negative-radius-2"><div class="white-ground white-ground-2"></div></span>
-					<span class="tabs tab-2" onclick="tab2()">
-						<label  class="">Rm Script</label>
-					</span>
-					<span class="negative-radius-3"><div class="white-ground white-ground-3"></div></span>
-					<span class="tabs tab-3" onclick="tab3()">
-						<label  class="">Tab 3</label>
-					</span>
-					<span class="negative-radius-4"><div class="white-ground white-ground-4"></div></span>
-				</div>
-				<div class="content">
-					<div id="center">
-						
-						<h1>Username</h1>
-						<input class="data-field" type="text" id="username">
-						<h1>Site</h1>
-						<input class="data-field" type="text" id="site-url">
-						<h1>Application Name</h1>
-						<input class="data-field" type="text" id="application-name">
-						<h1>Icon Image</h1>
-						<label for="iconBeforeBase64" id="iconBeforeBase64-label">Browse...</label>
-						<input type="file" id="iconBeforeBase64" />
-						<div id="buttons">
-							<button onclick="clearList();" >Clear</button>
-							<button onclick="generate()">Generate</button>
-						</div>
-					</div>
-					
-					
-				</div>
+					<label  class=""><i class="icofont-terminal"></i></label>
+				</span>
+				
+				<span class="tabs tab-2" onclick="tab2()">
+					<label  class=""><i class="icofont-bin"></i></label>
+				</span>
+				
+				<span class="tabs tab-3" onclick="tab3()">
+					<label  class=""><i class="icofont-penguin-linux"></i></label>
+				</span>
+				
 			</div>
 			
+		</div>
+		
+		<div id="script-list">
+			<div class="content">
+				<button onclick="openMenu()" id="menu-button">Menu</button>
+				<div id="center">
+
+					<h1>Username</h1>
+					<input class="data-field" type="text" id="username">
+					<h1>Site</h1>
+					<input class="data-field" type="text" id="site-url">
+					<h1>Application Name</h1>
+					<input class="data-field" type="text" id="application-name">
+					<h1>Icon Image</h1>
+					<label for="iconBeforeBase64" id="iconBeforeBase64-label">Browse...</label>
+					<input type="file" id="iconBeforeBase64" />
+					<div id="buttons">
+						<button onclick="clearList();" ><i class="icofont-mop"></i> Clear</button>
+						<button onclick="generate()"><i class="icofont-automation"></i> Generate</button>
+					</div>
+				</div>
+			</div>
+			<div class="box" id="ul-script">
+				<ul id="list">
+
+				</ul>
+			</div>
+			
+		</div>
+		<div class="resumer-motivacional">
 			<div class="box" id="resumer">
 				<h1>Resume</h1>
-				<select name="" size="6"id="resume">
+				
+					
+				<select name="" size="3"id="resume">
 				</select>
-				<button onclick="removeItemFromResume()">Remove</button>
+				<button onclick="removeItemFromResume()"><i class="icofont-code-not-allowed"></i>Remove</button>
 			</div>
-			<div class="box motivacional-quotes">
+
+			<div class="box motivacional-quotes" id="quotes-list">
 				<h1>Motivacional</h1>
 				<nav class="motivacional-quotes-list">
 					<ul class="ul-quote-list">
-						
+
 					</ul>
 				</nav>
-				<button onclick="motivate()">Motivate</button>
-				
+				<button onclick="motivate()"><i class="icofont-dice"></i>Motivate</button>
 			</div>
 		</div>
 		
+		
+		
 
 
-		<div class="box">
-			<ul id="list">
-				
-			</ul>
-		</div>
-		<button id="download-button" onclick="downloadScript();" >Download</button>
+		
+		<!--<button id="download-button" onclick="downloadScript();" >Download</button>-->
 
 	</div>
 	<script type="text/javascript" src="js/scriptGenerator.js"></script>
