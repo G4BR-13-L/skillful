@@ -75,7 +75,7 @@ overflow: hidden;
 .box button, #download-button, #script-list button{
 	margin-top:20px;
 	/*min-width: 180px;*/
-	border-radius: 15px;
+	border-radius: 8px;
 	background-color: #209f84;
 	font-weight: bolder;
 	color:white;
@@ -98,6 +98,10 @@ overflow: hidden;
 	border:1px solid #209f84;
 	color:#209f84;
 	box-shadow: 5px 5px 0px #209f84;
+}
+#download-button{
+	width:80%;
+	margin:0 auto;
 }
 
 #script-list{
@@ -190,7 +194,7 @@ overflow: hidden;
 	 cursor: pointer;
 	 width:80%;
 	 text-align: center;
-	 background-color: #191414;
+	 background-color: #209f84;
 	 color:white;
 	 height:50px;
 	 font-family: 'Circular Bold','Montserrat', Arial;
@@ -204,9 +208,9 @@ overflow: hidden;
 
 #iconBeforeBase64-label:hover{
 	background-color: white;
-	border:1px solid #F85079;
-	color:#F85079;
-	box-shadow: 5px 5px 0px #F85079;
+	border:1px solid #209f84;
+	color:#209f84;
+	box-shadow: 5px 5px 0px #209f84;
 }
 
 /*==========================*/

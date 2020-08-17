@@ -39,6 +39,7 @@ function tab1(){
 	<button onclick="clearList();" ><i class="icofont-mop"></i> Clear</button>
 	<button onclick="generate()"><i class="icofont-automation"></i> Generate</button>
 	</div>
+	<button id="download-button" onclick="downloadScript();"><i class="icofont-download"></i> Download</button>
 	</div>`;
 	console.log('Nativefier script generator selected');
 }
