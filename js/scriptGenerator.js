@@ -1,6 +1,5 @@
 console.log('Initializing nativefier generator script...')
 var apps = [];
-//var x = eue.join(';');
 var content = [];
 console.log('Content was setted')
 //==========================================
@@ -40,14 +39,13 @@ function generate(){
 	var resume = document.querySelector('select#resume');
 
 
-	apps.push(newApplicationName)
+	apps.push(newApplicationName);
 	var itemResumed = document.createElement('option');
 	itemResumed.innerText = newApplicationName;
-	itemResumed.setAttribute("id", newApplicationName)
-	resume.appendChild(itemResumed)
-	//window.alert(newApplicationName)
+	itemResumed.setAttribute("id", newApplicationName);
+	resume.appendChild(itemResumed);
 	var item = document.createElement('li');
-	item.setAttribute("class", newApplicationName)
+	item.setAttribute("class", newApplicationName);
 
 	trueBase64Icon = encodeImageFileAsURL(falseBase64Icon);
 	content.push(`cd ~ && nativefier --name ${newApplicationName} ${site} && cd /home/${username}/${newApplicationName}-linux-x64 && cd resources/app && mkdir static && cd static || echo '${trueBase64Icon}' > image.txt && base64 --decode image.txt > Icon.png || cd ../../.. && mv /home/${username}/${newApplicationName}-linux-x64 /home/${username}/${applicationName} && cd .. && sudo mv ${applicationName} /opt && sudo ln -sf /opt/${applicationName}/${newApplicationName} /usr/bin/${applicationName} && echo -e '[Desktop Entry]\n Version=1.0\n Name=${applicationName}\n Exec=/opt/${applicationName}\n /${newApplicationName} Icon=/opt/${applicationName}/resources/app/static/Icon.png\n Type=Application\n Categories=Application' | sudo tee /usr/share/applications/${applicationName}.desktop ;`);
